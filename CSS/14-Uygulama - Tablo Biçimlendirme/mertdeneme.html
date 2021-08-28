@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Table</title>
+    
+    <style>
+        table
+        {
+            width: 100%;
+            border-collapse: collapse;
+            
+        }
+        th{
+            background-color: dodgerblue;
+            color: white;
+            text-align: left;
+            font-family: Calibri;
+            padding: 6px;
+            border: 1px solid #ddd; 
+        }
+        td
+        {
+            padding: 6px;
+            border: 1px solid #ddd; 
+        }
+
+        tbody tr:hover{
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        .beyaz
+        {
+            background-color: white;
+        }
+
+        .gri
+        {
+            background-color: rgb(230, 230, 230);
+        }
+    </style>
+
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="beyaz">
+                <td>
+                    Product 1
+                </td>
+                <td>
+                    Lorem ipsum dolor sit amet.
+                </td>
+                <td>
+                    10€
+                </td>
+
+            </tr>
+            <tr class="gri">
+                <td>
+                    Product 2
+                </td>
+                <td>
+                    Lorem ipsum dolor sit amet.
+                </td>
+                <td>
+                    10€
+                </td>
+
+            </tr>
+            <tr class="beyaz">
+                <td>
+                    Product 3
+                </td>
+                <td>
+                    Lorem ipsum dolor sit amet.
+                </td>
+                <td>
+                    10€
+                </td>
+
+            </tr>
+            <tr class="gri">
+                <td>
+                    Product 4
+                </td>
+                <td>
+                    Lorem ipsum dolor sit amet.
+                </td>
+                <td>
+                    10€
+                </td>
+
+            </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>

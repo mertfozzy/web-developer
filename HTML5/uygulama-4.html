@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemen Üye Ol</title>
+</head>
+
+<body>
+
+    <h1>Lütfen Formu Eksiksiz Doldurunuz.</h1>
+    <hr>
+
+    <h3>Hesap Bilgileriniz</h3>
+    <form action="/Home/Register">
+        <p>
+            Kullanıcı Adı : <input type="text" name="username" placeholder="Kullanıcı adı giriniz" required>
+        </p>
+        <p>
+            Eposta : <input type="email" name="email" placeholder="Mail adresinizi giriniz" required>
+        </p>
+        <p>
+            Parola : <input type="password" name="password" placeholder="Parola giriniz" required>
+        </p>
+    
+
+    <h3>Kişisel Bilgileriniz</h3>
+    
+        <p>
+            Ad : <input type="text" name="name" required>
+        </p>
+        <p>
+            Soyad : <input type="text" name="surname" required>
+        </p>
+        <p>
+            Şehir :
+            <select name="city" required>
+                <option>İstanbul</option>
+                <option>Ankara</option>
+                <option>Tokat</option>
+                <option>İzmir</option>
+                <option>Antalya</option>
+                <option>Balıkesir</option>
+            </select>
+        </p>
+        <p>
+            Cinsiyet : 
+            <input type="radio" name="Cinsiyet"> Erkek 
+            <input type="radio" name="Cinsiyet"> Kadın 
+        </p>
+        <p>
+            Hobileriniz : 
+            <input type="checkbox" name="hobby">Sinema
+            <input type="checkbox" name="hobby">Gezmek
+            <input type="checkbox" name="hobby">Spor
+            <input type="checkbox" name="hobby">Kitap
+        </p>
+
+        <input type="submit" value="Kaydet">
+        <input type="reset" value="Sıfırla">
+
+    </form>
+
+</body>
+</html>
