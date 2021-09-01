@@ -16,21 +16,24 @@
 
     <div class="container p-23">
         <h1 class="app-title" id="header">To-DO App</h1>
-        <div class="card-headeer">
-            New Task
+        <div class="card">
+            <div class="card-header">
+                New Task
+            </div>
+            <div class="card-body">
+                <form id="addTaskForm">
+                    <div class="input-group mt-3">
+                        <input id="txtTaskName" class="form-control" placeholder="Type a new Task" type="text">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit" id="btnAddNewTask">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div> <!-- ilk card yapısı -->
         </div>
-
-        <div class="card-body">
-            <form id="addTaskForm">
-                <input id="txtTaskName" class="form-control" placeholder="Type a new Task" type="text">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit" id="btnAddNewTask">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-            </form>
-        </div> <!-- ilk card yapısı -->
-
+        
         <div class="card mt-3">
             <div class="card-header">
                 Task List
