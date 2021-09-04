@@ -7,6 +7,13 @@ eventListener();
 
 function eventListener() {
     form.addEventListener("submit", addNewItem);
+
+    //delete an item
+    taskList.addEventListener("click" , deleteItem);
+
+    //delete all
+    btnDeleteAll.addEventListener("click", deleteAllItems);
+    
 }
 
 function addNewItem(e) {
@@ -33,4 +40,18 @@ function addNewItem(e) {
 
     e.preventDefault();
 
+}
+
+function deleteItem(e) {
+    console.log(e);
+    if (e.target.className=="fas fa-times") {
+        e.target.parentElement.parentElement.remove();
+    }
+    e.preventDefault();
+}
+
+function deleteAllItems(e) {
+    
+    taskList.innerHTML=" ";
+    e.preventDefault();
 }
