@@ -2,10 +2,9 @@ const form = document.querySelector("form");
 const input = document.querySelector("#txtTaskName");
 const btnDeleteAll = document.querySelector("#btnDeleteAll");
 const taskList = document.querySelector("#task-list");
-const items = ["item1", "item2", "item3"];
+let items;
 
-//load item
-loadItems();
+
 
 eventListener();
 
@@ -19,8 +18,6 @@ function eventListener() {
     btnDeleteAll.addEventListener("click", deleteAllItems);
     
 }
-
-
 
 function deleteItem(e) {
     console.log(e);
@@ -44,25 +41,6 @@ function deleteAllItems(e) {
     e.preventDefault();
 }
 
-function addNewItem(e) {
-    
-    if (input.value === " ") {
-        alert("You didn't type anything.")
-    }
-
-    createItem(input.value);//input value
-
-    input.value = ''; //clear input
-    e.preventDefault();
-
-}
-
-function loadItems(e) {
-    items.forEach(function(items) {
-        createItem(items);
-    })
-}
-
 function createItem(text) {
     const li = document.createElement("li");
     li.className = "list-group-item list-group-item-secondary"; 
@@ -76,3 +54,44 @@ function createItem(text) {
     li.appendChild(a); //add a to li
     taskList.appendChild(li); // add li to ul
 }
+
+function addNewItem(e) {
+    
+    if (input.value === " ") {
+        alert("You didn't type anything.")
+    }
+
+    createItem(input.value);//input value
+
+    setItemToLS(input.value);
+
+    input.value = ''; //clear input
+    e.preventDefault();
+
+}
+
+function loadItems() {
+
+    items = getItemsFromLS();
+    
+    items.forEach(function(item) {
+        createItem(item);
+    });
+}
+
+function getItemsFromLS() {
+    if (localStorage.getItem("items")===null) {
+        items = [];
+    }
+    else{
+        items = JSON.parse(localStorage.getItem("items"));
+    }
+}
+
+function setItemToLS(text) {
+    items = getItemsFromLS();
+    items.push(text);
+    localStorage.setItem("items", JSON.stringify(items));
+
+}
+
