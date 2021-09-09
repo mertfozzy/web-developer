@@ -46,7 +46,10 @@ document.querySelector(".fa-arrow-circle-right").addEventListener("click",functi
 
 });
 
-function showSlide(index) {
+function showSlide(i) {
+
+    index = i;
+
     document.querySelector(".card-img-top").setAttribute("src", models[index].image);
     document.querySelector(".card-title").textContent = models[index].name;
     document.querySelector(".card-link").setAttribute("href", models[index].link);
