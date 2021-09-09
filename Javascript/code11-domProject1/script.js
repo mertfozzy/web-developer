@@ -2,6 +2,10 @@ const form = document.querySelector("form");
 const input = document.querySelector("#txtTaskName");
 const btnDeleteAll = document.querySelector("#btnDeleteAll");
 const taskList = document.querySelector("#task-list");
+const items = ["item1", "item2", "item3"];
+
+//load item
+loadItems();
 
 eventListener();
 
@@ -16,31 +20,7 @@ function eventListener() {
     
 }
 
-function addNewItem(e) {
-    
-    if (input.value === " ") {
-        alert("You didn't type anything.")
-    }
 
-    const li = document.createElement("li");
-    li.className = "list-group-item list-group-item-secondary"; 
-    li.appendChild(document.createTextNode(input.value));
-
-    const a = document.createElement("a");
-    a.classList = "delete-item float-right";
-    a.setAttribute("href", "#");
-    a.innerHTML = '<i class="fas fa-times"></i>';
-
-    li.appendChild(a); //add a to li
-    taskList.appendChild(li); // add li to ul
-    input.value = ''; //clear input
-
-
-    console.log(li);
-
-    e.preventDefault();
-
-}
 
 function deleteItem(e) {
     console.log(e);
@@ -52,6 +32,47 @@ function deleteItem(e) {
 
 function deleteAllItems(e) {
     
-    taskList.innerHTML=" ";
+    if (confirm("emin misin birader bak ?")) {
+        if (confirm("bak oluuum??")) {
+            if (confirm("iyi onayla da görim :D")) {
+                taskList.innerHTML=" ";
+            }
+        }
+    }
+
+    
     e.preventDefault();
+}
+
+function addNewItem(e) {
+    
+    if (input.value === " ") {
+        alert("You didn't type anything.")
+    }
+
+    createItem(input.value);//input value
+
+    input.value = ''; //clear input
+    e.preventDefault();
+
+}
+
+function loadItems(e) {
+    items.forEach(function(items) {
+        createItem(items);
+    })
+}
+
+function createItem(text) {
+    const li = document.createElement("li");
+    li.className = "list-group-item list-group-item-secondary"; 
+    li.appendChild(document.createTextNode(text));
+
+    const a = document.createElement("a");
+    a.classList = "delete-item float-right";
+    a.setAttribute("href", "#");
+    a.innerHTML = '<i class="fas fa-times"></i>';
+
+    li.appendChild(a); //add a to li
+    taskList.appendChild(li); // add li to ul
 }
