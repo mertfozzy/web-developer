@@ -27,8 +27,13 @@ var models = [
 
 var index = 0;
 var counter = models.length;
-showSlide(index);
 
+var settings = {
+    duration : "2000",
+    random : true
+};
+
+init(settings);
 
 document.querySelector(".fa-arrow-circle-left").addEventListener("click",function(params) {
     
@@ -45,6 +50,22 @@ document.querySelector(".fa-arrow-circle-right").addEventListener("click",functi
     console.log(index);
 
 });
+
+function init(set) {
+    
+    setInterval(function name(params) {
+        
+        if (set.random) {
+            index = Math.floor(Math.random() * counter);
+        }else{
+            
+        }
+        showSlide(index);
+        console.log(index);
+
+    },set.duration)
+
+}
 
 function showSlide(i) {
 
