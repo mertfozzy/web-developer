@@ -50,6 +50,13 @@ function showSlide(i) {
 
     index = i;
 
+    if (i < 0) {
+        index = counter - 1; //0dan küçük index gelirse son arabaya atıyor
+    }
+    if (i >= counter) {
+        index = 0; //3den büyükse başa atıyor
+    }
+
     document.querySelector(".card-img-top").setAttribute("src", models[index].image);
     document.querySelector(".card-title").textContent = models[index].name;
     document.querySelector(".card-link").setAttribute("href", models[index].link);
