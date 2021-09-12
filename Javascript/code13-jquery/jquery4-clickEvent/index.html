@@ -1,0 +1,43 @@
+<html>
+
+    <head>    
+        <title>Jquery</title>   
+     <script src="https://code.jquery.com/jquery-3.2.1.js"  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+    </script>
+        
+    <style>
+
+        .makecolored{
+            font-size: 25px;
+            color: yellowgreen;
+        }
+
+    </style>
+
+    </head>
+
+    <body>
+       
+        <p class="paragraf">Mert</p>
+        <p>Serra</p>
+        <p>Trello</p>
+        <p>Javascript</p>
+            
+        
+        <script>
+            $(function() {
+                
+                $(".paragraf").click(function () {
+                   $(this).addClass("makecolored"); 
+                });
+
+            })
+        </script>
+
+    </body>
+
+
+
+
+
+</html>
