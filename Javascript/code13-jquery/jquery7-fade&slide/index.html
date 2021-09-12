@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+    </script>
+    <style>
+        body{
+            background-color: rgb(35, 39, 48);
+            color : white
+        }
+        button:hover{
+            background-color: yellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p id="p1">Merhaba dünya</p>
+        <button id="slideup">Up</button>
+        <button id="slidedown">Down</button>
+        <button id="slidetoggle">Toggle</button>
+    </div>
+
+    <br><br>
+
+    <div class="container">
+        <p id="p2">Merhaba dünya</p>
+        <button id="fadein">In</button>
+        <button id="fadeout">Out</button>
+        <button id="fadetoggle">Toggle</button>
+    </div>
+
+
+
+    <script>
+
+        $(function () {
+            
+            $("#slideup").click(function () {
+               
+                $("#p1").slideUp("slow");
+                console.log("up");
+
+            });
+
+            $("#slidedown").click(function () {
+               
+               $("#p1").slideDown("slow");
+               console.log("down");
+
+           });
+
+           $("#slidetoggle").click(function () {
+               
+               $("#p1").slideToggle("slow");
+               console.log("toggle");
+
+           });
+
+           $("#fadein").click(function () {
+               
+               $("#p2").fadeIn("slow");
+               console.log("in");
+
+           });
+
+           $("#fadeout").click(function () {
+              
+              $("#p2").fadeOut("slow");
+              console.log("out");
+
+          });
+
+          $("#fadetoggle").click(function () {
+              
+              $("#p2").fadeToggle("slow");
+              console.log("toggle");
+
+          });
+
+
+        });
+
+    </script>
+    
+</body>
+</html>
