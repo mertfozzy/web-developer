@@ -11,13 +11,21 @@
 
     <ul id="liste">
         <li>mert</li>
-        <li>serra</li>
+        <li id="serra">serra</li>
         <li>trello</li>
     </ul>
     
 
     <script>
         console.log($("#liste"));
+
+        var styles = {
+            color : "green",
+        };
+
+        $("#liste").css(styles);
+        $("#serra").css("font-size", "30px");
+
     </script>
 </body>
 
