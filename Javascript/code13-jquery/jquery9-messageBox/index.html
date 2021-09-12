@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+    </script>
+    <style>
+        body{
+            background-color: rgb(35, 39, 48);
+            color : white;
+            margin: 0;
+            padding: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        #message-box{
+            background-color: green;
+            text-align: center;
+
+        }
+
+        #header{
+            height: 25px;
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+
+        #content{
+            height: auto;
+            padding: 20px;
+            display: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div id="message-box">
+
+        <div id="header">
+            Mesajınız var !
+        </div>
+
+        <div id="content">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. At officia qui dignissimos, cum magni nesciunt aperiam. Fugiat quis asperiores blanditiis.
+        </div>
+
+    </div>
+
+    <script>
+
+        $(function () {
+            
+            $("#header").click(function () {
+               
+                $("#content").toggle("slow");
+
+            });
+
+        });
+
+    </script>
+    
+</body>
+</html>
