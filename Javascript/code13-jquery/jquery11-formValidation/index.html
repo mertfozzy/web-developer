@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+    </script>
+    <style>
+        #wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+        body{
+            background-color: rgb(35, 39, 48);
+            color : white;
+            padding: 15px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid white;
+        }
+        label{
+            display: inline-block;
+            width: 150px;
+        }
+        input{
+            width: 200px;
+            padding: 5px;
+        }
+        input:hover{
+            background-color: yellow;
+        }
+        .form-group{
+            margin: 20px;
+        }
+        button{
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            margin-top: 10px;
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover{
+            background-color: yellowgreen;
+        }
+        #error{
+            color: red;
+            text-align: left;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <div id="error">
+
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email : </label>
+            <input type="text" name="email" id="email" placeholder="Please enter your email">    
+        </div>
+        <div class="form-group">
+            <label for="telefon">Telephone : </label>
+            <input type="text" name="telefon" id="telefon" placeholder="Please enter your phone">    
+        </div>
+        <div class="form-group">
+            <label for="password">Password : </label>
+            <input type="text" name="password" id="password" placeholder="Please enter your password">    
+        </div>
+        <div class="form-group">
+            <label for="repassword">Password Confirm : </label>
+            <input type="text" name="repassword" id="repassword" placeholder="Please enter your password">    
+        </div>
+    
+        <button id="btn">Save</button>
+
+    </div>
+
+
+    <script>
+
+        $(function () {
+
+        
+            function isEmail(email) {
+                var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;  
+                return regex.test(email);              
+            }
+            
+            $("#btn").click(function () {
+
+                var errorMessage="";
+                $("#error").html(errorMessage);
+
+                if ($("#email").val()=="") {
+                    errorMessage += "<p>Email zorunlu alan.</p>";
+                }
+
+                if (isEmail($("#email").val()==false)) {
+                    errorMessage += "<p>Email kontrol et.</p>";
+                }
+
+                if ($("#telefon").val()=="") {
+                    errorMessage += "<p>Telefon zorunlu alan.</p>";
+                }
+                if ($("#password").val()=="") {
+                    errorMessage += "<p>Password zorunlu alan.</p>";
+                }
+                if ( $("#password").val() != $("#repassword").val()) {
+                    errorMessage += "<p>Password onaylayın.</p>";
+                }
+
+                if (errorMessage!="") {
+                    $("#error").html(errorMessage);
+                }
+
+            });
+
+        });
+
+    </script>
+    
+</body>
+</html>
