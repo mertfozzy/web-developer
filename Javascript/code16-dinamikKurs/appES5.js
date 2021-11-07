@@ -37,6 +37,20 @@ UI.prototype.deleteCourse = function(element) {
     }
 };
 
+UI.prototype.showAlert = function (message,className) {
+    var alert = `
+    <div class="alert alert-${className}">
+        ${message}
+    </div>
+    `;
+
+    const row = document.querySelector(".row");
+    row.insertAdjacentHTML("beforeBegin", alert);
+    setTimeout(()=>{
+        document.querySelector(".alert").remove();
+    },3000);
+}
+
 document.getElementById("new-course").addEventListener("submit", function(e){
    
     const title = document.getElementById("title").value;
@@ -48,8 +62,17 @@ document.getElementById("new-course").addEventListener("submit", function(e){
 
     //create ui & add course & clear course
     const ui = new UI();
-    ui.addCourseToList(course);
-    ui.clearControls(course);
+
+    if (title === "" || instructor === "" || image === "") {
+        ui.showAlert("Please complete the form", "warning");
+    }
+    else{
+        ui.addCourseToList(course);
+        ui.clearControls(course);
+
+        ui.showAlert("Course has been added.", "success")
+
+    }
 
     e.preventDefault();
 
@@ -58,4 +81,5 @@ document.getElementById("new-course").addEventListener("submit", function(e){
 document.getElementById("course-list").addEventListener("click",function (e) {
     const ui = new UI();
     ui.deleteCourse(e.target);
+    ui.showAlert("Course has been deleted.", "danger");
 })
